@@ -1,43 +1,21 @@
 
 export const Statistics = ({title, stats}) => {
-return <section class="statistics">
-<h2 class="title">{title}</h2>
-<ul class="stat-list">
-    {stats.map(({ id, label, percentage }) => 
-        
-    )};
-</ul>
+return (
+<section class="statistics">
+  {/* Пилим условия для титульной через тернарник */}
+  {title && <h2 class="title">{title}</h2>}
+  <ul class="stat-list">
+    {/* Дальше методом МАП перебираем DATA проп и создаём необходимое кол-во LI!!! */}
+    {stats.map((stat) => 
+      <li class="item" key={stat.id}>
+      <span class="label">{stat.label}</span>
+      <span class="percentage"> {stat.percentage}%</span>
+    </li>
+    )}
+  </ul>
 </section>
+);
 };
 
 
 
-
-{/* <li class="item">
-    <span class="label">.docx</span>
-    <span class="percentage">4%</span>
-  </li>
-  <li class="item">
-    <span class="label">.mp3</span>
-    <span class="percentage">14%</span>
-  </li>
-  <li class="item">
-    <span class="label">.pdf</span>
-    <span class="percentage">41%</span>
-  </li>
-  <li class="item">
-    <span class="label">.mp4</span>
-    <span class="percentage">12%</span>
-  </li> */}
-
-// // return (<StatisticsCard>
-// {title && <Title>{title}</Title>}
-// <StatList>
-//     {stats.map(({ id, label, percentage }) =>
-//         <StatisticsItem key={id}>
-// <StatText>{label}</StatText>
-// <StatText>{percentage}%</StatText>
-//         </StatisticsItem>
-//     )}
-// </StatList>
-// </StatisticsCard>)
