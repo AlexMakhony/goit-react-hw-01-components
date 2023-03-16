@@ -1,3 +1,5 @@
+import PropTypes from 'prop-types';
+
 // тут ми експортуємо наш компонент ЛІ, який ми зарендеримо у нашому UL FriendList
 
 export const FriendListItem = ({ friend }) => {
@@ -22,3 +24,11 @@ export const FriendListItem = ({ friend }) => {
     );
   };
   
+  FriendListItem.propTypes = {
+    friend: PropTypes.shape({
+      id: PropTypes.number.isRequired,
+      isOnline: PropTypes.bool.isRequired,
+      avatar: PropTypes.string.isRequired,
+      name: PropTypes.string.isRequired,
+    }).isRequired,
+  };
