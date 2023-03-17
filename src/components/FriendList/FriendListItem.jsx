@@ -1,17 +1,22 @@
 import PropTypes from 'prop-types';
+import {
+  FriendsItem,
+  FriendsStatusOnline,
+  FriendsStatusOffline,
+} from './FriendList.styled';
 
 // тут ми експортуємо наш компонент ЛІ, який ми зарендеримо у нашому UL FriendList
 
 export const FriendListItem = ({ friend }) => {
     return (
-      <li className="item" key={friend.id}>
+      <FriendsItem key={friend.id}>
         {friend.isOnline ? 
         (
-          <span className="status-green">green</span>
+          <FriendsStatusOnline></FriendsStatusOnline>
         ) 
         : 
         (
-          <span className="status-red">red</span>
+          <FriendsStatusOffline></FriendsStatusOffline>
         )}
         <img
           className="avatar"
@@ -20,7 +25,7 @@ export const FriendListItem = ({ friend }) => {
           width="48"
         />
         <p className="name">{friend.name}</p>
-      </li>
+      </FriendsItem>
     );
   };
   

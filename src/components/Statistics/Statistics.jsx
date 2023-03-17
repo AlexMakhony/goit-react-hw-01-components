@@ -1,20 +1,26 @@
 import PropTypes from 'prop-types';
+import {
+  StatisticWraper,
+  StatisticTitle,
+  StatisticList,
+  StatisticItem,
+} from './Statistisc.styled';
 
 export const Statistics = ({title, stats}) => {
 return (
-<section className="statistics">
+<StatisticWraper>
   {/* Пилим условия для титульной через тернарник */}
-  {title && <h2 className="title">{title}</h2>}
-  <ul className="stat-list">
+  {title && <StatisticTitle>{title}</StatisticTitle>}
+  <StatisticList>
     {/* Дальше методом МАП перебираем DATA проп и создаём необходимое кол-во LI!!! */}
     {stats.map((stat) => 
-      <li className="item" key={stat.id}>
+      <StatisticItem key={stat.id}>
       <span className="label">{stat.label}</span>
       <span className="percentage"> {stat.percentage}%</span>
-    </li>
+    </StatisticItem>
     )}
-  </ul>
-</section>
+  </StatisticList>
+</StatisticWraper>
 );
 };
 

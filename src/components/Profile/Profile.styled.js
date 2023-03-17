@@ -1,7 +1,7 @@
 import styled from '@emotion/styled';
 
 export const ProfileWraper = styled.div`
-    margin: 20px auto 0 auto;
+    margin: 40px auto 0 auto;
     width: 250px;
     height: max-content;
     border: 1px solid #c2c2c2;

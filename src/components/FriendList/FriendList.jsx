@@ -1,15 +1,20 @@
 import PropTypes from 'prop-types';
+import {
+  FriendsList,
+
+} from './FriendList.styled';
+
 
 // А тут ми імпортуємо нашу форму LI і звісно ж через MAP всавляємо в LI необхідку кількість
 import { FriendListItem } from "./FriendListItem";
 
 export const FriendList = ({friends}) => {
     return (
-        <ul className="friend-list">
+        <FriendsList>
             {friends.map((friend) => 
             <FriendListItem key={friend.id} friend={friend}/>
             )}
-        </ul>
+        </FriendsList>
     );
     };
     
